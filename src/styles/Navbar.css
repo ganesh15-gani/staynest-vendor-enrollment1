@@ -1,0 +1,316 @@
+/* Color Palette Variables */
+:root {
+  --primary-accent: #00C896;
+  --primary-accent-hover: #00b386;
+  
+  /* Light Theme Variables */
+  --nav-bg: rgba(255, 255, 255, 0.75);
+  --nav-border: rgba(241, 245, 249, 0.8);
+  --nav-text: #1e293b;
+  --nav-text-muted: #64748b;
+  --btn-secondary-bg: #f8fafc;
+  --btn-secondary-border: rgba(226, 232, 240, 0.8);
+  --mobile-panel-bg: rgba(255, 255, 255, 0.95);
+}
+
+[data-theme="dark"] {
+  /* Dark Theme Variables */
+  --nav-bg: rgba(15, 23, 42, 0.8);
+  --nav-border: rgba(51, 65, 85, 0.5);
+  --nav-text: #f8fafc;
+  --nav-text-muted: #94a3b8;
+  --btn-secondary-bg: #1e293b;
+  --btn-secondary-border: rgba(51, 65, 85, 0.8);
+  --mobile-panel-bg: rgba(15, 23, 42, 0.98);
+}
+
+/* Sticky Navbar Wrapper */
+.staynest-navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background-color: var(--nav-bg);
+  border-bottom: 1px solid var(--nav-border);
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Container Settings */
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Brand Logo Styles */
+.navbar-logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--nav-text);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  transition: color 0.3s ease;
+}
+
+.logo-dot {
+  color: var(--primary-accent);
+}
+
+/* Desktop Menu Links */
+.navbar-menu-desktop {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  display: inline-block;
+  color: var(--nav-text);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 8px 20px;
+  border-radius: 30px;
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Pill Hover Animation */
+.nav-item:hover {
+  background-color: var(--primary-accent);
+  color: #ffffff !important;
+}
+
+/* Desktop Button & Theme Controls */
+.navbar-actions-desktop {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-accent);
+  background-color: var(--btn-secondary-bg);
+  border: 1px solid var(--btn-secondary-border);
+  outline: none;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+  background-color: rgba(0, 200, 150, 0.1);
+  border-color: var(--primary-accent);
+}
+
+.toggle-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+/* Utility Action Buttons */
+.btn-signin {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--btn-secondary-bg);
+  color: var(--nav-text);
+  border: 1px solid var(--btn-secondary-border);
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-signin:hover {
+  border-color: var(--primary-accent);
+  background-color: rgba(0, 200, 150, 0.05);
+}
+
+.btn-enroll {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--primary-accent);
+  color: #ffffff;
+  border: none;
+  padding: 9px 22px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn-enroll:hover {
+  background-color: var(--primary-accent-hover);
+  box-shadow: 0 4px 12px rgba(0, 200, 150, 0.2);
+}
+
+/* Mobile Controls Wrapper */
+.navbar-controls-mobile {
+  display: none;
+  align-items: center;
+  gap: 8px;
+}
+
+.hamburger-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: var(--nav-text);
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.hamburger-btn:hover {
+  background-color: var(--btn-secondary-bg);
+}
+
+/* Mobile Controls Wrapper */
+.navbar-controls-mobile {
+  display: none;
+  align-items: center;
+  gap: 10px;
+}
+
+.hamburger-btn {
+  background: var(--btn-secondary-bg);
+  border: 1px solid var(--btn-secondary-border);
+  cursor: pointer;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--nav-text);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.hamburger-btn:hover {
+  border-color: var(--primary-accent);
+}
+
+/* Mobile Menu */
+.navbar-menu-mobile-panel {
+  overflow: hidden;
+  background: var(--mobile-panel-bg);
+  border-top: 1px solid rgba(0, 200, 150, 0.15);
+  border-bottom: 2px solid var(--primary-accent);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.navbar-menu-mobile-links {
+  list-style: none;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.navbar-menu-mobile-links li {
+  width: 100%;
+}
+
+.navbar-menu-mobile-links a {
+  display: block;
+  width: 100%;
+  padding: 14px 16px;
+  text-decoration: none;
+  color: var(--nav-text);
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.navbar-menu-mobile-links a:hover {
+  background: rgba(0, 200, 150, 0.1);
+  color: var(--primary-accent);
+}
+
+.navbar-menu-mobile-actions {
+  padding: 0 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn-signin-mobile,
+.btn-enroll-mobile {
+  width: 100%;
+  height: 48px;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.btn-signin-mobile {
+  background: var(--btn-secondary-bg);
+  color: var(--nav-text);
+  border: 1px solid var(--btn-secondary-border);
+}
+
+.btn-enroll-mobile {
+  background: var(--primary-accent);
+  color: #fff;
+  border: none;
+}
+
+/* Responsive */
+@media (max-width: 868px) {
+  .navbar-container {
+    padding: 14px 18px;
+  }
+
+  .navbar-logo {
+    font-size: 1.2rem;
+  }
+
+  .navbar-menu-desktop,
+  .navbar-actions-desktop {
+    display: none;
+  }
+
+  .navbar-controls-mobile {
+    display: flex;
+  }
+}
+
+/* Green Bottom Line */
+.staynest-navbar::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 2px;
+  background: var(--primary-accent);
+}

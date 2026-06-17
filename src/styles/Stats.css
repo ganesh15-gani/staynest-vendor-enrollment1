@@ -1,0 +1,205 @@
+/* Custom CSS Variables scoped to the Stats Section */
+:root {
+  --stats-section-bg: #f8fafc;
+  --stats-card-bg: rgba(255, 255, 255, 0.85);
+  --stats-card-border: rgba(226, 232, 240, 0.8);
+  --stats-card-shadow: rgba(148, 163, 184, 0.08);
+  --stats-text-primary: #1e293b;
+  --stats-text-secondary: #64748b;
+  --accent-green: #00C896;
+}
+
+[data-theme="dark"] {
+  --stats-section-bg: #0b0f19;
+  --stats-card-bg: rgba(30, 41, 59, 0.7);
+  --stats-card-border: rgba(255, 255, 255, 0.06);
+  --stats-card-shadow: rgba(0, 0, 0, 0.25);
+  --stats-text-primary: #f8fafc;
+  --stats-text-secondary: #94a3b8;
+}
+
+/* Section Wrapper and Layout Foundations */
+.staynest-stats-section {
+  background-color: var(--stats-section-bg);
+  padding: 60px 24px;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.stats-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 5;
+}
+
+/* Stats Card Grid configuration */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* Premium Card Design with Glassmorphism */
+.stat-card {
+  background-color: var(--stats-card-bg);
+  border: 1px solid var(--stats-card-border);
+  border-radius: 20px;
+  padding: 28px 24px;
+  box-shadow: 0 10px 30px var(--stats-card-shadow);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Card Accent Visual Layer on Hover */
+.stat-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 0%, rgba(0, 200, 150, 0.04), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.stat-card:hover::after {
+  opacity: 1;
+}
+
+.stat-card:hover {
+  border-color: rgba(0, 200, 150, 0.3);
+  box-shadow: 0 20px 40px var(--stats-card-shadow), 0 0 1px rgba(0, 200, 150, 0.2);
+}
+
+/* Stat Header & Customized Icon Glow Styles */
+.stat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.stat-icon-wrapper {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover .stat-icon-wrapper {
+  transform: scale(1.05) rotate(5deg);
+}
+
+/* Icon Palette Classes */
+.g-green {
+  background-color: rgba(0, 200, 150, 0.1);
+  color: var(--accent-green);
+}
+
+.g-blue {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.g-purple {
+  background-color: rgba(139, 92, 246, 0.1);
+  color: #8b5cf6;
+}
+
+.g-orange {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+}
+
+/* Geometric Card Deco Element */
+.card-top-decoration {
+  width: 35px;
+  height: 4px;
+  background-color: var(--stats-card-border);
+  border-radius: 2px;
+  transition: background-color 0.3s ease;
+}
+
+.stat-card:hover .card-top-decoration {
+  background-color: var(--accent-green);
+  opacity: 0.5;
+}
+
+/* Card Body with Numerical Values and Labels */
+.stat-body {
+  position: relative;
+  z-index: 2;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--stats-text-primary);
+  margin-bottom: 8px;
+  letter-spacing: -1px;
+}
+
+.stat-label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--stats-text-secondary);
+}
+
+/* Color Strip Indicator on the Card Footer */
+.card-bottom-accent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.stat-card:hover .card-bottom-accent {
+  background-color: var(--accent-green);
+}
+
+/* Responsive Adaptive Layout Rules */
+@media (max-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 568px) {
+  .staynest-stats-section {
+    padding: 40px 16px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .stat-card {
+    padding: 24px;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,44 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  overflow-x:hidden;
+}
+
+a{
+  text-decoration:none;
+}
+
+ul{
+  list-style:none;
+}
+
+img{
+  max-width:100%;
+}
+
+.container{
+  width:90%;
+  max-width:1300px;
+  margin:auto;
+}
+
+:root{
+  --primary:#00c896;
+  --secondary:#0f172a;
+  --accent:#38bdf8;
+  --white:#ffffff;
+  --dark:#0b1120;
+}
+
+section{
+  padding:100px 0;
+}
